@@ -1,5 +1,13 @@
 # Hiragana-Converter
 
+## Sublime Text 3
+
+Dieser Texteditor erlaubt uns viele nützliche Dinge.
+Einmal bekommen wir farbigen Code für bessere Lesbarkeit. Außerdem noch die Möglichkeit, Code direkt zu kompilieren.
+https://www.sublimetext.com/3
+Nach der Installation öffnet man die Hiragana.py Datei in Sublime, dann wählt man oben unter Tools -> Build System -> Python.
+Nun braucht man nur strg+b zu drücken und der code wird kompiliert.
+
 Kurz die basics von Github:
 
 ## Commit:
