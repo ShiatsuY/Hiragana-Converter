@@ -16,3 +16,7 @@ Ein Commit bewirkt, dass der aktuelle Branch sich ändert. Dies wird dadurch ges
 Wenn man aus 2 Branches wieder einen machen will, in der Regel wird alles wieder in den Master-Branch zurückführen, so macht man einen Pull-Request. 
 Das ist der letzte Check, ob die Branches sich vertragen oder ob es Komplikationen gibt.
 Falls wir mit Branches arbeiten sollten werde ich die Pull-Requests übernehmen.
+
+# Der Converter
+
+![] (hiragana-chart.jpg)
