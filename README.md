@@ -19,4 +19,4 @@ Falls wir mit Branches arbeiten sollten werde ich die Pull-Requests übernehmen.
 
 # Der Converter
 
-![] (hiragana-chart.jpg)
+![] (Hiragana-Converter/hiragana-chart.jpg)
