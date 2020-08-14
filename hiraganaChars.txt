@@ -1,5 +1,5 @@
 a あ   ka  か   sa  さ
 i い   ki  き   shi し
-o お   ko  こ   so  そ
-e え   ke  け   se  せ
 u う   ku  く   su  す
+e え   ke  け   se  せ
+o お   ko  こ   so  そ
