@@ -20,7 +20,7 @@ def converter(string):
 		# falls True, dann muss man sie natürlich wieder False setzen, sonst überspringt den ganzen rest des wortes
 		if skip:
 			skip = False 
-			continue
+			continue 
 		
 		# k-reihe
 		if char1 == 'k':
@@ -32,8 +32,23 @@ def converter(string):
 					result = result + 'か'
 					# hier True setzen, weil der 2te for-loop den zweiten buchstaben schon betrachtet!
 					skip = True
+				elif char2 == 'i':
+					result = result + 'き'
+					skip = True
+				elif char2 == 'u':
+					result = result + 'く'
+					skip = True
+				elif char2 == 'e':
+					result = result + 'け'
+					skip = True
+				elif char2 == 'o':
+					result = result + 'こ'
+					skip = True
 
-				# TODO: vervollständigen
+
+
+
+
 
 		# TODO: s-reihe hinzufügen
 
@@ -49,7 +64,7 @@ def converter(string):
 	print(result)
 
 # test-wort
-test = "akaa"
+test = "ka"
 
 # hier wird die funktion mit der eingabe des test-wortes aufgerufen
 converter(test)
