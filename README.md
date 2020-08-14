@@ -1,7 +1,5 @@
 # Hiragana-Converter
 
-<a ref="Hiragana-Converter/hiraganaChars.txt">
-
 ## Sublime Text 3
 
 Dieser Texteditor erlaubt uns viele nützliche Dinge.   
