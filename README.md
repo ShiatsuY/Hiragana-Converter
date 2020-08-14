@@ -1,7 +1,5 @@
 # Hiragana-Converter
 
-ん
-
 ## Sublime Text 3
 
 Dieser Texteditor erlaubt uns viele nützliche Dinge.
