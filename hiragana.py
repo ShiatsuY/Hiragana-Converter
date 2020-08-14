@@ -8,7 +8,13 @@ def converter(wort):
 	# das hier ist eine sogenannte Flagge
 	# sie wird genau dann True gesetzt, wenn wir eine Iteration überspringen wollen
 	# sie wird anfangs auf False gesetzt, damit sie nicht gleich etwas bewirkt
+	# sie sorgt dafür, dass man einen Buchstabeen skippt
 	skip = False
+
+	# um einen weiteren Buchstaben zu skippen braucht man ne zweite Flagge
+	skip2 = False
+
+
 
 	# erster for-loop
 	# pos steht für position, das ist unser zähler, er gibt uns die position wo wir bei unserem wort sind
@@ -27,7 +33,12 @@ def converter(wort):
 		# falls True, dann muss man sie natürlich wieder False setzen, sonst überspringt den ganzen rest des wortes
 		if skip:
 			skip = False 
-			continue 
+			continue
+
+		if skip2:
+			skip2 = False
+			continue
+
 		
 		# k-reihe
 		if wort[pos] == 'k':
@@ -71,7 +82,7 @@ def converter(wort):
 
 				if wort[pos+2] == 'i':
 					result = result + 'し'
-					skip = True
+					skip2 = True
 					
 
 			if wort[pos+1] == 'u':
@@ -103,7 +114,7 @@ def converter(wort):
 
 # test-wort
 #test = "kakikukeko"
-test = "shi"
+test = "sashisuseso"
 # hier wird die funktion mit der eingabe des test-wortes aufgerufen
 converter(test)
 
