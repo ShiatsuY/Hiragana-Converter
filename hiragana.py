@@ -1,10 +1,7 @@
-# vokale
-vowels = "aiueo"
-
 # for-schleife
-# jedes character des string (deswegen c in s) wird einzeln betrachtet
+# jeder buchstabe des wortes wird einzeln betrachtet
 # result ist der speicher, hier werden die konvertierten zeichen gespeichert
-def converter(string):
+def converter(wort):
 	# speicher
 	result = ''
 
@@ -14,7 +11,17 @@ def converter(string):
 	skip = False
 
 	# erster for-loop
-	for char1 in string:
+	# pos steht für position, das ist unser zähler, er gibt uns die position wo wir bei unserem wort sind
+	# beispiel 
+	# sei pos = 2 und wort "abc"
+	# dann ist wort[2] = 'b', weil 'b' der zweite buchstabe ist
+	# wir durchlaufen jetzt also unser wort mit einem zähler und geben uns mit wort[pos] den buchstaben aus
+	# range gibt ein intervall an
+	# es startet bei 1 und geht bis zu unserem angegeben wert
+	# len steht für length, also wenn wort = "abc" ist, dann ist len(wort) = 3
+	# folglich ist range(len(wort)) = (1, 3)
+	# pos kann also 1,2 oder 3 werden
+	for pos in range(len(wort)):
 
 		# hier wird entschieden, ob diese Iteration überspringen wird (continue bewirkt das)
 		# falls True, dann muss man sie natürlich wieder False setzen, sonst überspringt den ganzen rest des wortes
@@ -23,28 +30,59 @@ def converter(string):
 			continue 
 		
 		# k-reihe
-		if char1 == 'k':
-			
-			# zweiter for-loop um vokale zu vergleichen
-			for char2 in vowels:		
-				
-				if char2 == 'a': 
-					result = result + 'か'
-					# hier True setzen, weil der 2te for-loop den zweiten buchstaben schon betrachtet!
-					skip = True
-				elif char2 == 'i':
-					result = result + 'き'
-					skip = True
-				elif char2 == 'u':
-					result = result + 'く'
-					skip = True
-				elif char2 == 'e':
-					result = result + 'け'
-					skip = True
-				elif char2 == 'o':
-					result = result + 'こ'
-					skip = True
+		if wort[pos] == 'k':
 
+			# um den nächsten buchstaben schon zu betrachten benutzen wir einen kleinen trick:
+			# wir addieren eine 1 auf unseren zähler pos um den nächsten buchstaben zu erhalten
+			if wort[pos+1] == 'a': 
+				result = result + 'か'
+				# hier True setzen, weil wir schon den zweiten buchstaben betrachten!
+				skip = True
+			if wort[pos+1] == 'i':
+				result = result + 'き'
+				skip = True
+			if wort[pos+1] == 'u':
+				result = result + 'く'
+				skip = True
+			if wort[pos+1] == 'e':
+				result = result + 'け'
+				skip = True
+			if wort[pos+1] == 'o':
+				result = result + 'こ'
+				skip = True
+
+		# s-Reihe
+		if wort[pos] == 's':
+
+			if wort[pos+1] == 'a':
+				result = result + 'さ'
+				skip = True
+
+			if wort[pos+1] == 'h':
+				
+				skip = True
+
+
+
+				
+				
+
+				#Da man mit shi drei Buchstaben hat muss man es genauer definieren
+
+				if wort[pos+2] == 'i':
+					result = result + 'し'
+					skip = True
+					
+
+			if wort[pos+1] == 'u':
+				result = result + 'す'
+				skip = True
+			if wort[pos+1] == 'e':
+				result = result + 'せ'
+				skip = True
+			if wort[pos+1] == 'o':
+				result = result + 'そ'
+				skip = True
 
 
 
@@ -52,22 +90,22 @@ def converter(string):
 
 		# TODO: s-reihe hinzufügen
 
-		if   char1 == 'a': result = result + 'あ'
-		elif char1 == 'i': result = result + 'い'
-		elif char1 == 'u': result = result + 'う'
-		elif char1 == 'e': result = result + 'え'
-		elif char1 == 'o': result = result + 'お'
+		if   wort[pos] == 'a': result = result + 'あ'
+		elif wort[pos] == 'i': result = result + 'い'
+		elif wort[pos] == 'u': result = result + 'う'
+		elif wort[pos] == 'e': result = result + 'え'
+		elif wort[pos] == 'o': result = result + 'お'
 		
-		elif char1 == 'n': result = result + 'ん'
+		elif wort[pos] == 'n': result = result + 'ん'
 
 	# nach dem for-loop soll das ergebnis ausgegeben werden
 	print(result)
 
 # test-wort
-test = "ka"
-
+#test = "kakikukeko"
+test = "shi"
 # hier wird die funktion mit der eingabe des test-wortes aufgerufen
 converter(test)
 
 # "kaa"  -> "かあ""
-# "akaa" -> "あかあ"
+# "akae" -> "あかえ"
