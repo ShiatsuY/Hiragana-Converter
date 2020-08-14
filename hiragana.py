@@ -16,7 +16,7 @@ def converter(string):
 	# for-schleife
 	for char1 in string:
 
-		# hier wird entschieden, ob diese Iteration überspringen wird (continue bewirkt das)
+		# hier wird entschieden, ob diese Iteration übersprungen werden soll (continue bewirkt das)
 		# falls True, dann muss man sie natürlich wieder False setzen, sonst überspringt den ganzen rest des wortes
 		if skip:
 			skip = False 
