@@ -1,147 +1,100 @@
-# for-schleife
-# jeder buchstabe des wortes wird einzeln betrachtet
-# result ist der speicher, hier werden die konvertierten zeichen gespeichert
+def error(): raise ValueError('Something went wrong!')
+
 def converter(wort):
-	# speicher
 	result = ''
-
-	# das hier ist eine sogenannte Flagge
-	# sie wird genau dann True gesetzt, wenn wir eine Iteration überspringen wollen
-	# sie wird anfangs auf False gesetzt, damit sie nicht gleich etwas bewirkt
-	# sie sorgt dafür, dass man einen Buchstabeen skippt
 	skip = False
-
-	# um einen weiteren Buchstaben zu skippen braucht man ne zweite Flagge
 	skip2 = False
-
-
-
-	# erster for-loop
-	# pos steht für position, das ist unser zähler, er gibt uns die position wo wir bei unserem wort sind
-	# beispiel 
-	# sei pos = 2 und wort "abc"
-	# dann ist wort[2] = 'b', weil 'b' der zweite buchstabe ist
-	# wir durchlaufen jetzt also unser wort mit einem zähler und geben uns mit wort[pos] den buchstaben aus
-	# range gibt ein intervall an
-	# es startet bei 1 und geht bis zu unserem angegeben wert
-	# len steht für length, also wenn wort = "abc" ist, dann ist len(wort) = 3
-	# folglich ist range(len(wort)) = (1, 3)
-	# pos kann also 1,2 oder 3 werden
+	
 	for pos in range(len(wort)):
 
-		# hier wird entschieden, ob diese Iteration überspringen wird (continue bewirkt das)
-		# falls True, dann muss man sie natürlich wieder False setzen, sonst überspringt den ganzen rest des wortes
 		if skip:
 			skip = False 
 			continue
-
 		if skip2:
 			skip2 = False
 			continue
 
-		
 		# k-reihe
 		if wort[pos] == 'k':
-
-			# um den nächsten buchstaben schon zu betrachten benutzen wir einen kleinen trick:
-			# wir addieren eine 1 auf unseren zähler pos um den nächsten buchstaben zu erhalten
 			if wort[pos+1] == 'a': 
-				result = result + 'か'
-				# hier True setzen, weil wir schon den zweiten buchstaben betrachten!
-				skip = True
-			if wort[pos+1] == 'i':
-				result = result + 'き'
-				skip = True
-			if wort[pos+1] == 'u':
-				result = result + 'く'
-				skip = True
-			if wort[pos+1] == 'e':
-				result = result + 'け'
-				skip = True
-			if wort[pos+1] == 'o':
-				result = result + 'こ'
-				skip = True
+				result += 'か'
+			elif wort[pos+1] == 'i':
+				result += 'き'
+			elif wort[pos+1] == 'u':
+				result += 'く'
+			elif wort[pos+1] == 'e':
+				result += 'け'
+			elif wort[pos+1] == 'o': 
+				result += 'こ'
+			else: error()
+			skip = True
 
 		# s-Reihe
-		if wort[pos] == 's':
-
+		elif wort[pos] == 's':
 			if wort[pos+1] == 'a':
-				result = result + 'さ'
-				skip = True
-
-			if wort[pos+1] == 'h':
-				
-				skip = True
-
-
-
-				
-				
-
-				#Da man mit shi drei Buchstaben hat muss man es genauer definieren
-
+				result += 'さ'
+			elif wort[pos+1] == 'h':
 				if wort[pos+2] == 'i':
 					result = result + 'し'
-					skip2 = True
-
-			if wort[pos+1] == 'u':
+				else: error()
+				skip2 = True
+			elif wort[pos+1] == 'u':
 				result = result + 'す'
-				skip = True
-			if wort[pos+1] == 'e':
+			elif wort[pos+1] == 'e':
 				result = result + 'せ'
-				skip = True
-			if wort[pos+1] == 'o':
-				result = result + 'そ'
-				skip = True
+			elif wort[pos+1] == 'o':
+				result += 'そ'
+			else: error()
+			skip = True
 
-		# t-Reihe  ta chi! tsu! te to
-		if wort[pos] == 't':
-
-			# um den nächsten buchstaben schon zu betrachten benutzen wir einen kleinen trick:
-			# wir addieren eine 1 auf unseren zähler pos um den nächsten buchstaben zu erhalten
+		# t-reihe
+		elif wort[pos] == 't':
 			if wort[pos+1] == 'a': 
-				result = result + 'た'
-				# hier True setzen, weil wir schon den zweiten buchstaben betrachten!
-				skip = True
-			
-			# if wort[pos+1] == 'c':
-				result = result + 'ち'
-				skip = True
-				
-			if wort[pos+1] == 's':
-				skip = True
+				result += 'た'	
+			elif wort[pos+1] == 's':
 				if wort[pos+2] == 'u':
-					result = result + 'つ'
-					skip2 = True
+					result += 'つ'
+				else: error()
+				skip2 = True
+			elif wort[pos+1] == 'e':
+				result += 'て'
+			elif wort[pos+1] == 'o':
+				result += 'と'
+			else: error()	
+			skip = True		
 
-			if wort[pos+1] == 'e':
-				result = result + 'て'
-				skip = True
-			if wort[pos+1] == 'o':
-				result = result + 'と'
-				skip = True		
+		# chi 
+		elif wort[pos] == 'c':
+			if wort[pos+1] == 'h':
+				if wort[pos+2] == 'i':
+					result += 'ち'
+				else: error()
+				skip2 = True
+			else: error()
+			skip = True
 
-
-		if wort[pos] == 'n':
-
+		# n-reihe
+		elif wort[pos] == 'n':
 			if wort[pos+1] == 'a': 
-				result = result + 'な'
-				skip = True
-			if wort[pos+1] == 'i':
-				result = result + 'に'
-				skip = True
-			if wort[pos+1] == 'u':
-				result = result + 'ぬ'
-				skip = True
-			if wort[pos+1] == 'e':
-				result = result + 'ね'
-				skip = True
-			if wort[pos+1] == 'o':
-				result = result + 'の'
-				skip = True
+				result += 'な'
+			elif wort[pos+1] == 'i':
+				result += 'に'
+			elif wort[pos+1] == 'u':
+				result += 'ぬ'
+			elif wort[pos+1] == 'e':
+				result += 'ね'
+			elif wort[pos+1] == 'o':
+				result += 'の'
+			else: result += 'ん'
+			skip = True
 
 
-		if wort[pos] == 'h':
+
+####################################
+#	ab hier weitermachen       #
+####################################
+
+		elif wort[pos] == 'h':
 
 			# ha hi fu! he ho
 
@@ -162,7 +115,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'm':
+		elif wort[pos] == 'm':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'ま'
@@ -181,7 +134,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'y':
+		elif wort[pos] == 'y':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'や'
@@ -194,7 +147,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'r':
+		elif wort[pos] == 'r':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'ら'
@@ -213,7 +166,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'w':
+		elif wort[pos] == 'w':
 			if wort[pos+1] == 'a':
 				result = result + 'わ'
 				skip = True
@@ -223,7 +176,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'g':
+		elif wort[pos] == 'g':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'が'
@@ -242,7 +195,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'b':
+		elif wort[pos] == 'b':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'ば'
@@ -261,7 +214,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'p':
+		elif wort[pos] == 'p':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'ぱ'
@@ -280,7 +233,7 @@ def converter(wort):
 				skip = True
 
 
-		if wort[pos] == 'd':
+		elif wort[pos] == 'd':
 
 			if wort[pos+1] == 'a': 
 				result = result + 'だ'
@@ -298,27 +251,17 @@ def converter(wort):
 				result = result + 'ど'
 				skip = True
 
-
-
-
-		
-
-		if   wort[pos] == 'a': result = result + 'あ'
+		elif wort[pos] == 'a': result = result + 'あ'
 		elif wort[pos] == 'i': result = result + 'い'
 		elif wort[pos] == 'u': result = result + 'う'
 		elif wort[pos] == 'e': result = result + 'え'
 		elif wort[pos] == 'o': result = result + 'お'
-		
-		elif wort[pos] == 'n': result = result + 'ん'
 
-	# nach dem for-loop soll das ergebnis ausgegeben werden
+		else: raise ValueError('Something went wrong!')
+
 	print(result)
 
-# test-wort
-#test = "kakikukeko"
-test = "dadehipo"
-# hier wird die funktion mit der eingabe des test-wortes aufgerufen
-converter(test)
-
-# "kaa"  -> "かあ""
-# "akae" -> "あかえ"
+ktest = "kakikukeko"
+stest = "sashisuseso"
+ttest = "tachitsuteto"
+converter(stest)
