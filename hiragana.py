@@ -92,7 +92,6 @@ def converter(wort):
 				elif wort[pos+2] == 'o': result += 'にょ'
 				else: error()
 				skip2 = True
-
 			else: result += 'ん'
 			skip = True
 			

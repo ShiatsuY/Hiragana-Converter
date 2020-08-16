@@ -27,4 +27,6 @@ Falls wir mit Branches arbeiten sollten werde ich die Pull-Requests übernehmen.
 
 # Der Converter
 
-<img src="hiragana-chart.jpg">
+<img src="complete_hiragana.jpg">
+
+[Hiragana Zeichen](https://en.wikipedia.org/wiki/Hiragana#Table_of_hiragana)
