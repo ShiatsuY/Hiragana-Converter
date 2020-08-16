@@ -1,5 +1,6 @@
 def error(): raise ValueError('Something went wrong!')
 
+# wir beginnen mit der funktion, die für eine zahl n alle zahlen von 1 bis n addieren soll
 # bevor wir zur rekursion kommen möchte ich die version ohne rekursion zeigen
 # der for-loop ist ein nützliches mittel, aber der while-loop ist gleichmächtig
 # wir führen eine aktion immer wieder aus, bis eine bedingung erreicht wird (ähnlich wie das erreichen vom ende des for-loops)
