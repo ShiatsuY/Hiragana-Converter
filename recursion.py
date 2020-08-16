@@ -22,8 +22,8 @@ def sumWhile(n):
 
 # beide varianten leiden unter dem gleichen problem: sie sind abhängig vom zwischenspeicher result.
 # stell dir eine netzwerkverbindung vor, die instabil sein könnte. wenn es einen aussetzer in der verbindung gibt, dann könnte
-# 1. der zwischenspeicher hat einen zwischenschritt verpasst
-# 2. es wirft einen error weil er den zwischenspeicher nicht mehr finden kann (result ging verloren)
+# 1. der zwischenspeicher einen zwischenschritt verpassen
+# 2. es wird ein error geworfen weil er den zwischenspeicher nicht mehr finden kann (result ging verloren)
 # das ist nur ein aspekt, aber das ist schon ein gravierender nachteil
 # von der performance ganz zu schweigen (jeder schritt ist eine operation)
 
