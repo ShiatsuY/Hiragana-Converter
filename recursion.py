@@ -63,14 +63,17 @@ def sumRecursion(n):
 # das müssen wir jetzt benutzen, weil das typsystem von python zur laufzeit nicht wissen wird, was sum(n) überhaupt ist. der compiler wird einen error ausgeben.
 # angenommen, sum(n) bekommt anstatt eine zahl ein wort. dann bekommen wir einen fehler, weil n < 1 zu fragen ja schon nicht mehr funktioniert.
 # angenommen, wir lassen "return" weg. dann haben wir das problem beim dritten fall: n + sum(n-1):
-# sum(n) ist ja keine zahl, sondern eine funktion! also woher soll python wissen, dann sum(n) eigentlich auch nur zahlen als ausgabetyp hat?
+# sum(n) ist ja keine zahl, sondern eine funktion! also woher soll python wissen, dass sum(n) eigentlich auch nur zahlen als ausgabetyp hat?
 # ganz einfach! indem wir mit "return" den ausgabetyp fixieren kann python das wissen und wird die funktion sum(n) als zahl zusätzlich interpretieren.
 
 print(sumFor(5))
 print(sumWhile(5))
 print(sumRecursion(5))
 
-# aufgabenteil:
+#################
+# aufgabenteil: #
+#################
+
 # fibonacci-zahlen werden wie folgt definiert:
 # f(0) = 0
 # f(1) = 1
