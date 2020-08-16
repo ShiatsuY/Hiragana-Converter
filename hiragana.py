@@ -4,8 +4,12 @@ def converter(wort):
 	result = ''
 	skip = False
 	skip2 = False
+	positions = range(len(wort))
+	length = len(wort)
+
+
 	
-	for pos in range(len(wort)):
+	for pos in positions:
 
 		if skip:
 			skip = False 
@@ -13,6 +17,7 @@ def converter(wort):
 		if skip2:
 			skip2 = False
 			continue
+
 
 		# k-reihe
 		if wort[pos] == 'k':
@@ -72,8 +77,10 @@ def converter(wort):
 			else: error()
 			skip = True
 		# n-reihe
-		elif wort[pos] == 'n':
-			if wort[pos+1] == 'a': result += 'な'
+		elif wort[pos] == 'n': 
+			if pos == length-1: 
+				result += 'ん'
+			elif wort[pos+1] == 'a': result += 'な'
 			elif wort[pos+1] == 'i': result += 'に'
 			elif wort[pos+1] == 'u': result += 'ぬ'
 			elif wort[pos+1] == 'e': result += 'ね'
@@ -85,6 +92,7 @@ def converter(wort):
 				elif wort[pos+2] == 'o': result += 'にょ'
 				else: error()
 				skip2 = True
+
 			else: result += 'ん'
 			skip = True
 		# h-Reihe
@@ -237,7 +245,7 @@ ktest = "kakikukeko"
 stest = "sashisuseso"
 ttest = "tachitsuteto"
 jtest = "jajijujo"
-htest = "chachichucho"
-converter(stest)
-converter(jtest)
+htest = "n"
+#converter(stest)
+#converter(jtest)
 converter(htest)
