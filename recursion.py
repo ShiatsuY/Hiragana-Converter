@@ -89,7 +89,7 @@ print(sumRecursion(5))
 # deine aufgabe ist es eine rekursive version zu schreiben
 
 # for-loop
-def fibLoop(n):
+def fibFor(n):
 	if n < 0: error()
 	result, n1, n2 = 0, 0, 1
 
@@ -121,6 +121,6 @@ def fibRecursion(n):
 	# TODO
 	error()
 
-print(fibLoop(5))
+print(fibFor(5))
 print(fibWhile(5))
 #print(fibRecursion(5))
