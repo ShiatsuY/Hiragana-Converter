@@ -6,8 +6,6 @@ def converter(wort):
 	skip2 = False
 	positions = range(len(wort))
 	length = len(wort)
-
-
 	
 	for pos in positions:
 
@@ -17,7 +15,6 @@ def converter(wort):
 		if skip2:
 			skip2 = False
 			continue
-
 
 		# k-reihe
 		if wort[pos] == 'k':
@@ -35,6 +32,7 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# s-Reihe
 		elif wort[pos] == 's':
 			if wort[pos+1] == 'a': result += 'さ'
@@ -54,6 +52,7 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# t-reihe
 		elif wort[pos] == 't':
 			if wort[pos+1] == 'a': result += 'た'	
@@ -64,7 +63,8 @@ def converter(wort):
 			elif wort[pos+1] == 'e': result += 'て'
 			elif wort[pos+1] == 'o': result += 'と'
 			else: error()	
-			skip = True		
+			skip = True	
+			
 		# cha chi chu cho 
 		elif wort[pos] == 'c':
 			if wort[pos+1] == 'h':
@@ -76,10 +76,10 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# n-reihe
 		elif wort[pos] == 'n': 
-			if pos == length-1: 
-				result += 'ん'
+			if pos == length-1: result += 'ん'
 			elif wort[pos+1] == 'a': result += 'な'
 			elif wort[pos+1] == 'i': result += 'に'
 			elif wort[pos+1] == 'u': result += 'ぬ'
@@ -95,6 +95,7 @@ def converter(wort):
 
 			else: result += 'ん'
 			skip = True
+			
 		# h-Reihe
 		elif wort[pos] == 'h':
 			# ha hi fu! he ho
@@ -111,12 +112,14 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# fu
 		elif wort[pos] == 'f':
 			if wort[pos+1] == 'u': result += 'ふ'
 			else: error()
 			skip = True 
-		# m-Reihe
+			
+		# m-reihe
 		elif wort[pos] == 'm':
 			if wort[pos+1] == 'a': result += 'ま'				
 			elif wort[pos+1] == 'i': result += 'み'
@@ -132,14 +135,16 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
-		# y-Reihe
+			
+		# y-reihe
 		elif wort[pos] == 'y':
 			if wort[pos+1] == 'a': result += 'や'		
 			elif wort[pos+1] == 'u': result += 'ゆ'	
 			elif wort[pos+1] == 'o': result += 'よ'
 			else: error()
 			skip = True
-		# r-Reihe
+			
+		# r-reihe
 		elif wort[pos] == 'r':
 			if wort[pos+1] == 'a': result += 'ら'				
 			elif wort[pos+1] == 'i': result += 'り'		
@@ -155,12 +160,14 @@ def converter(wort):
 				skip2 = True		
 			else: error()
 			skip = True
-		# w-Reihe
+			
+		# w-reihe
 		elif wort[pos] == 'w':
 			if wort[pos+1] == 'a': result += 'わ'				
 			elif wort[pos+1] == 'o': result += 'を'
 			else: error()
 			skip = True
+			
 		# g-reihe
 		elif wort[pos] == 'g':
 			if wort[pos+1] == 'a': result += 'が'				
@@ -177,6 +184,7 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# z-reihe
 		elif wort[pos] == 'z':
 			if wort[pos+1] == 'a': result += 'ざ'						
@@ -184,7 +192,8 @@ def converter(wort):
 			elif wort[pos+1] == 'e': result += 'ぜ'				
 			elif wort[pos+1] == 'o': result += 'ぞ'
 			else: error()
-			skip = True		
+			skip = True	
+			
 		# j-Reihe
 		elif wort[pos] == 'j':
 			if wort[pos+1] == 'a': result += 'じゃ'
@@ -193,6 +202,7 @@ def converter(wort):
 			elif wort[pos+1] == 'o': result += 'じょ'
 			else: error()
 			skip = True
+			
 		# b-Reihe
 		elif wort[pos] == 'b':
 			if wort[pos+1] == 'a': result += 'ば'			
@@ -209,6 +219,7 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# p-Reihe
 		elif wort[pos] == 'p':
 			if wort[pos+1] == 'a': result += 'ぱ'				
@@ -225,6 +236,7 @@ def converter(wort):
 				skip2 = True
 			else: error()
 			skip = True
+			
 		# d-Reihe
 		elif wort[pos] == 'd':
 			if wort[pos+1] == 'a': result += 'だ'
@@ -234,18 +246,13 @@ def converter(wort):
 			elif wort[pos+1] == 'o': result += 'ど'
 			else: error()
 			skip = True
+			
+		# vokale
 		elif wort[pos] == 'a': result += 'あ'
 		elif wort[pos] == 'i': result += 'い'
 		elif wort[pos] == 'u': result += 'う'
 		elif wort[pos] == 'e': result += 'え'
 		elif wort[pos] == 'o': result += 'お'
-		else: raise ValueError('Something went wrong!')
+			
+		else: error()
 	print(result)
-ktest = "kakikukeko"
-stest = "sashisuseso"
-ttest = "tachitsuteto"
-jtest = "jajijujo"
-htest = "n"
-#converter(stest)
-#converter(jtest)
-converter(htest)
