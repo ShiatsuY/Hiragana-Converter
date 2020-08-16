@@ -9,8 +9,7 @@ def error(): raise ValueError('Something went wrong!')
 def sumFor(n):
 	if n < 1: error()
 	result = 0
-	for x in range(n):
-		result += x + 1 # frage: wieso steht hier + 1?
+	for x in range(n): result += x + 1 # frage: wieso steht hier + 1?
 	return result
 
 def sumWhile(n):
@@ -18,7 +17,7 @@ def sumWhile(n):
 	result = 0
 	while n > 0:
 		result += n
-		n = n - 1 # frage: wieso steht hier - 1?
+		n += -1 # frage: wieso steht hier - 1?
 	return result
 
 # beide varianten leiden unter dem gleichen problem: sie sind abhängig vom zwischenspeicher result.
