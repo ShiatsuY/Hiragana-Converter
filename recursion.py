@@ -79,12 +79,12 @@ print(sumRecursion(5))
 # f(1) = 1
 # f(n) = f(n-1) + f(n-2)
 # die ersten 10 zahlen sind:
-# 0 1 1 2 3 5 8 13 21 34 88
+# (von f(0) bis f(9))
+# 0 1 1 2 3 5 8 13 21 34 55
 # > f(3) =      f(2)     + f(1)
 # > f(3) = (f(1) + f(0)) + f(1)
 # > f(3) = ( 1   +  0)   +  1
 # > f(3) = 2
-# die ersten 3 zahlen sind: 0 1 1 und ihre summe ist 2
 
 # deine aufgabe ist es eine rekursive version zu schreiben
 
