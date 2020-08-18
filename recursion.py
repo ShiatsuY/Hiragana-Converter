@@ -98,17 +98,13 @@ def fibFor(n):
 # while-loop
 def fibWhile(n):
 	if n < 0: error()
-	result, n1, n2, counter = 0, 0, 1, 1
-
+	n1, n2, counter = 0, 1, 1
+    
 	while (counter <= n):
-		result += n1
-		temp = n1 + n2
-		n1 = n2
-		n2 = temp
-
+		n1, n2 = n2, n1 + n2
 		counter += 1
 
-	return result
+	return n1
 
 # rekursion
 def fibRecursion(n): 
