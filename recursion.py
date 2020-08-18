@@ -90,17 +90,11 @@ print(sumRecursion(5))
 
 # for-loop
 def fibFor(n):
-	if n < 0: error()
-	result, n1, n2 = 0, 0, 1
-
-	for x in range(0, n):
-		result += n1 
-		temp = n1 + n2
-		n1 = n2
-		n2 = temp
-
-	return result
-
+	n1, n2 = 0, 1
+	for x in range(n):
+		n1, n2 = n2, n1 + n2
+	return n1
+	
 # while-loop
 def fibWhile(n):
 	if n < 0: error()
@@ -121,6 +115,7 @@ def fibRecursion(n):
 	# TODO
 	error()
 
-print(fibFor(5))
-print(fibWhile(5))
-#print(fibRecursion(5))
+for x in range(10):
+	print(fibFor(x))
+        print(fibWhile(x)) 
+        #print(fibRecursion(x)) 
