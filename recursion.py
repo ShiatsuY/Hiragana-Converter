@@ -107,11 +107,14 @@ def fibWhile(n):
 	return n1
 
 # rekursion
-def fibRecursion(n): 
-	# TODO
-	error()
+def fibRecursion(n): 	
+	if n < 0: error()	
+	elif n == 0: return 0
+	elif n == 1: return 1
+	else: return fibRecursion(n-1) + fibRecursion(n-2)
 
 for x in range(10):
 	print(fibFor(x))
-        print(fibWhile(x)) 
-        #print(fibRecursion(x)) 
+	print(fibWhile(x))
+	print(fibRecursion(x))
+	print("-------------------------")
