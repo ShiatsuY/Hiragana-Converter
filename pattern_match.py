@@ -48,8 +48,8 @@ def convert(wort):
 	# wenn man so eine hashmap hat, dann füttert man ihr schlüssel wie bei listen einen index
 
 	head, tail = wort[0], wort[1:]
-	if len(xs) == 1: return hiragana[head]
-	else: return hiragana[head] + converter(tail)
+	if len(xs) == 1: return hiragana_map[head]
+	else: return hiragana_map[head] + converter(tail)
 
 # jetzt müssen wir uns auch die hashmap 'hiragana' kümmern.
 # hiragana = {}
@@ -75,10 +75,10 @@ print(hiragana2)
 
 # TODO: print(hiragana2) ausführen, die ausgegebene liste hier copy-pasten
 
-# hiraganaMap = { ... }
+hiragana_map = {}
 
 # dann die einträge anpassen
-# jeden ungültigen eintrag entfernen und jeden gültigen eintrag den richtigen schlüssel zu weisen, beispiel:
+# jeden ungültigen eintrag entfernen und jeden gültigen eintrag den richtigen schlüssel zuweisen, beispiel:
 # 0: '\u3040'	-> löschen
 # 1: 'ぁ'		-> löschen (ist ein sonderfall, beachten wir nicht)
 # 2: 'あ'		-> 'a': 'あ'
