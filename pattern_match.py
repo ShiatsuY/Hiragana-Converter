@@ -64,7 +64,7 @@ hiragana1 = [chr(x) for x in range(ord('\u3040'), ord('\u309f') + 1)]
 # mit [ (save this) for x in xs] erstelle ich ganz schnell eine liste für jedes element in der liste xs
 # jedes x ist eine zahl, die erste ist 12532 und die letzte ist 12447
 # daher schreiben wir chr(x), das nimmt eine zahl und gibt den unicode wert zurück, also genau unser gewünschtes hiragana
-# dasselbe gilt auch für range, aber hier muss ich zusätzlich die unicode werde in ord verpacken (die umkehrfunktion von chr)
+# dasselbe gilt auch für range, aber hier muss ich zusätzlich die unicodes in ord verpacken (die umkehrfunktion von chr)
 
 # aus dieser liste machen wir eine hashmap mit genau derselben magic:
 
