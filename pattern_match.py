@@ -10,7 +10,7 @@
 # strings wie 'okarina' sind auch listen, zumindest werden sie auch behandelt.
 # im for-loop haben wir mit += strings zusammengefügt, also sprich konkateniert.
 # genau deswegen können wir auch strings mit einem index abfragen
-# sei wort = "okarina"
+# sei wort = 'okarina'
 # dann ist wort[0] = 'o', wort[1] = 'k', etc
 
 # wieder erhält die convert-funktion ein wort - welchen typ 'wort' hat müssen wir erstmal nicht angebenen (danke python),
