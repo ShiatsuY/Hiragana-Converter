@@ -3,7 +3,7 @@
 # for index in (range(len(liste))) (len -> length)
 # eine rekursion macht das auch, ohne dass man index bzw. länge wissen muss
 # damit wir die rekursion noch besser nutzen können erweitern wir mit dem sogenannten pattern matching
-# das ist im besonderen das denken von head und tail, also das die liste so [.][....] aussieht
+# das ist im besonderen das denken von head und tail, also dass die liste so aussieht: [.][....] 
 
 # fangen wir mit der rekursion an. wie ich versprochen habe lösen wir die logik vom content ab.
 
