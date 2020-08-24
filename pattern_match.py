@@ -74,6 +74,15 @@ print(hiragana2)
 # nun sind die hiragana an ihre index-werte gekoppelt. diese müssten von hand geändert und separat abgespeichert werden
 
 # TODO: print(hiragana2) ausführen, die ausgegebene liste hier copy-pasten
+{'a': 'あ', 'i': 'い','u': 'う','e': 'え','o': 'お', 'ka': 'か', 'ga': 'が','ki': 'き', 'gi': 'ぎ', 'ku': 'く', 'gu': 'ぐ', 'ke': 'け', 'ge': 'げ',
+'ko': 'こ','go': 'ご', 'sa': 'さ', 'za': 'ざ', 'shi': 'し', 'ji': 'じ', 'su': 'す', 'zu': 'ず', 'se': 'せ', 'ze': 'ぜ', 'so': 'そ', 'zo': 'ぞ',
+'ta': 'た','da': 'だ', 'chi': 'ち', 'di': 'ぢ', 'tsu':'つ', 'du': 'づ', 'te': 'て', 'de': 'で', 'to': 'と', 'do': 'ど', 'na': 'な', 'ni': 'に', 'nu': 'ぬ',
+'ne': 'ね', 'no': 'の', 'ha': 'は', 'ba': 'ば', 'pa': 'ぱ', 'hi': 'ひ', 'bi': 'び', 'pi': 'ぴ', 'fu': 'ふ', 'bu': 'ぶ', 'pu': 'ぷ', 'he': 'へ',
+'be': 'べ', 'pe': 'ぺ', 'ho': 'ほ', 'bo': 'ぼ', 'po': 'ぽ', 'ma': 'ま', 'mi': 'み', 'mu': 'む', 'me': 'め', 'mo': 'も', 'ya':'や','yu': 'ゆ',
+'yo':'よ', 'ra': 'ら', 'ri': 'り', 'ru': 'る', 're': 'れ', 'ro': 'ろ','wa': 'わ', 'wo': 'を', 'n': 'ん', 'kya': 'きゃ', 'kyu': 'きゅ', 'kyo': 'きょ',
+'sha': 'しゃ', 'shu':'しゅ','sho': 'しょ', 'cha': 'ちゃ', 'chu': 'ちゅ', 'cho': 'ちょ', 'nya': 'にゃ', 'nyu': 'にゅ', 'nyo': 'にょ', 'hya': 'ひゃ',
+'hyu': 'ひゅ', 'hyo': 'ひょ', 'mya': 'みゃ', 'myu': 'みゅ', 'myo': 'みょ', 'rya': 'りゃ', 'ryu': 'りゅ', 'ryo': 'りょ', 'gya': 'ぎゃ', 'gyu': 'ぎゅ',
+'gyo': 'ぎょ', 'bya': 'びゃ', 'byu': 'びゅ', 'byo': 'びょ', 'pya': 'ぴゃ', 'pyu': 'ぴゅ', 'pyo': 'ぴょ', 'ja': 'じゃ', 'ju': 'じゅ', 'jo': 'じょ'}
 
 hiragana_map = {}
 
@@ -87,3 +96,4 @@ hiragana_map = {}
 
 
 # nächstes mal: mache aus 'watashi' -> ['wa', 'ta', 'shi']
+
