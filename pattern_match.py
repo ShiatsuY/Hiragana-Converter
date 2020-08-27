@@ -119,7 +119,7 @@ vokale = 'aeiou'
 
 # das ist unsere abbruchbedingung. wenn ein vokal gelesen wird, dann wird es noch in den zwischenspeicher aufgenommen,
 # damit der zwischenspeicher eine vollständige silbe enthält. diese wird als liste verpackt und es geht von vorne los. 
-# achtung !!! die zeilen 105 und 108 sehen verdächtig gleich aus.
+# achtung !!! die zeilen 115 und 118 sehen verdächtig gleich aus.
 # der unterschied ist der folgende: ist eine silbe vollständig, so soll sie als liste gespeichert werden, ansonten ist
 # der zwischenspeicher nicht voll genug.
 
@@ -142,8 +142,8 @@ def string_to_list(w, acc):
 
 	# ist es unser letzter schritt? dann wissen wir, dass auch die silbe zuende sein muss
 	# also nurnoch eben den head in den zwischenspeicher schreiben und das ding als liste zurückgeben
-	if len(w) == 1: 
-		# acc = TODO
+	if len(w) == 1:
+		acc = [acc + head]
 		return acc
 
 	# lesen wir ein leerzeichen? wir setzen es auch in die neue liste ein
@@ -156,7 +156,7 @@ def string_to_list(w, acc):
 	# lesen wir gerade ein vokal? dann müsste die silbe zu ende sein
 	# wir schreiben den head in den zwischenspeicher und geben das ding als liste zurück
 	elif head in vokale:
-		# acc = TODO
+		acc = [acc + head]
 		return acc + string_to_list(tail, '')
 
 	# spezialfall n
@@ -172,7 +172,7 @@ def string_to_list(w, acc):
 	# die silbe ist wohl noch nicht zu ende
 	# dann brauchen wir nurnoch den head in den zwischenspeicher zu schreiben und die rekursion fortsetzen
 	else:
-		# acc = TODO
+		acc = acc + head
 		return string_to_list(tail, acc)
 
 #print(string_to_list('okarina', ''))
